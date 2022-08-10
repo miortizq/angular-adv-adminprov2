@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="col-6">
+        <app-dona titulo = 'Ventas'
+                [datos]='dataVentas'
+                [etiquetas]='labelsVentas'
+                [colores]='coloresVentas'></app-dona>
+    </div>
+
+    <div class="col-6">
+        <app-dona [datos]='dataSinTitulo'
+                  [etiquetas]='labelsVentas'
+                  [colores]='coloresSinTitulo'></app-dona>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <app-dona titulo = 'Compras'
+                  [datos]='dataCompras'
+                  [etiquetas]='labelsVentas'
+                  [colores]='coloresCompras'></app-dona>
+    </div>
+
+    <div class="col-6">
+        <app-dona titulo = 'Ingresos'
+                  [datos]='dataIngresos'
+                  [etiquetas]='labelsVentas'
+                  [colores]='coloresIngresos'></app-dona>
+    </div>
+</div>

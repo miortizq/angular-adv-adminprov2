@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                
+                <h4 class="card-title">Striped Progress bar </h4>
+                <div class="progress m-t-20">
+                    <div    class="progress-bar bg-primary progress-bar-striped active" 
+                            style="height:5px;"  
+                            [style.width]="getProgreso1"
+                            role="progressbar"> 
+                    </div>
+                </div>
+
+                <div class="progress m-t-20">
+                    <div    class="progress-bar bg-info progress-bar-striped active" 
+                            style="height:5px;" 
+                            [style.width]="getProgreso2"
+                            role="progressbar"> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6" >
+        <div class="card">
+            <div class="card-body">
+                
+                <!-- Entre llaves cuadradas se especifica el Input que se encuentra en el hijo 
+                    (propiedad en el componente hijo - Incrementador).
+                    Se está enviando un valor 15 que será aceptado en el componente. 
+                    Para obtener el valor del hijo, se especifica el evento (Output) definido en el
+                    hijo. El valor emitido se obtiene a través de la definición $event que corresponde
+                    al valor emitido por cualquier evento. 
+                    El valor emitido se asigna directamente a la propiedad del componente padre  -->
+                <app-incrementador (valorSalida)="progreso1 = $event" 
+                                    [valorProgreso]="progreso1">
+                </app-incrementador>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6" >
+        <div class="card">
+            <div class="card-body">
+                <!-- Entre llaves cuadradas se especifican los Input definidos en el hijo.
+                     Los valores asociados son los enviados desde el padre para modificar los valores
+                     en el hijo. Para el Input btnClase se está enviando un valor literal, no el valor de
+                     una propiedad. Para que esto se pueda cumplir, este valor literal se encierra entre
+                     comillas simples  -->
+                <app-incrementador (valorSalida)="progreso2 = $event" 
+                                    [valorProgreso]="progreso2"
+                                    [btnClase]="'btn-info'">
+                </app-incrementador>
+                
+            </div>
+        </div>
+    </div>
+</div>

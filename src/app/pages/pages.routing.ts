@@ -7,11 +7,13 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesaComponent } from './promesa/promesa.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
     { 
         path: 'dashboard', 
         component: PagesComponent,
+        canActivate: [ AuthGuard ],
         children: [
           /* Se pueden asociar valores adicionales a la definición de las rutas utilizando el atributo
              data:{} */

@@ -67,7 +67,7 @@ declare const gapi: any ;
 
         this.userServic.login(this.loginDataForm.value)
             .subscribe(resp => {
-                
+
                 if (this.loginDataForm.get('remember')?.value) {
                     localStorage.setItem('email', this.loginDataForm.get('email')?.value!);
                 }
@@ -75,10 +75,11 @@ declare const gapi: any ;
                 {
                     localStorage.removeItem('email');
                 }
+                
                 //Navegar al DashBoard
-                this.ngZone.run( () => {
+                this.ngZone.run( () => {                    
                     this.router.navigateByUrl('/');
-                });
+                })
 
             },(err) => {
                 //Si sucede un error
